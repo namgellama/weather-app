@@ -9,44 +9,6 @@ import {
 } from './redux/actions/weatherActions';
 
 function App() {
-	// const API_KEY = 'a4042cb5040cb68342db86a1995d773a';
-
-	// const [input, setInput] = useState('');
-	// const [weatherData, setWeatherData] = useState(null);
-	// const [city, setCity] = useState('');
-
-	// const getCityData = async () => {
-	// 	try {
-	// 		const { data } = await axios.get(
-	// 			`http://api.openweathermap.org/geo/1.0/direct?q=${input}&appid=${API_KEY}`
-	// 		);
-	// 		return data;
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
-
-	// const getWeatherData = async (lat, lon) => {
-	// 	try {
-	// 		const { data } = await axios.get(
-	// 			`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
-	// 		);
-	// 		return data;
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
-
-	// const submitHandler = async (e) => {
-	// 	e.preventDefault();
-	// 	const res = await getCityData();
-	// 	const { lat, lon, name } = res[0];
-
-	// 	const data = await getWeatherData(lat, lon);
-	// 	setWeatherData(data);
-	// 	setCity(name);
-	// };
-
 	const dispatch = useDispatch();
 	const weatherData = useSelector((state) => state.weatherData);
 	const city = useSelector((state) => state.city);

@@ -6,7 +6,7 @@ import {
 	fetchWeatherFailure,
 } from '../actions/weatherActions';
 
-const API_KEY = 'a4042cb5040cb68342db86a1995d773a';
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 function* getCityData(action) {
 	try {
