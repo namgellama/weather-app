@@ -1,12 +1,7 @@
-import axios from 'axios';
 import { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	fetchWeatherRequest,
-	fetchWeatherSuccess,
-	fetchWeatherFailure,
-} from './redux/actions/weatherActions';
+import { fetchWeatherRequest } from './redux/actions/weatherActions';
 
 function App() {
 	const dispatch = useDispatch();
