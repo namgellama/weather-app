@@ -12,6 +12,8 @@ function App() {
 	const dispatch = useDispatch();
 	const weatherData = useSelector((state) => state.weatherData);
 	const city = useSelector((state) => state.city);
+	const loading = useSelector((state) => state.loading);
+	const error = useSelector((state) => state.error);
 
 	const [input, setInput] = useState('');
 
@@ -21,9 +23,9 @@ function App() {
 	};
 
 	return (
-		<div className="my-20 w-[1000px] mx-auto flex justify-center flex-col items-center">
+		<div className="w-[1000px] mx-auto flex justify-center flex-col items-center  py-5">
 			<form
-				className="border pl-5 pr-3 py-2 rounded-2xl bg-white flex items-center justify-between gap-x-3 w-[40%] mb-10"
+				className="border border-gray-400 pl-5 pr-3 py-2 rounded-2xl bg-white flex items-center justify-between gap-x-3 w-[40%] mb-10"
 				onSubmit={submitHandler}
 			>
 				<input
@@ -38,6 +40,11 @@ function App() {
 
 			<div>
 				{/* {!weatherData && <h2>Loading...</h2>} */}
+
+				{loading && (
+					<span className="loading loading-spinner loading-md"></span>
+				)}
+				{error && <h1>{error}</h1>}
 
 				{city && <h1 className="text-3xl font-bold">Weather in {city}</h1>}
 				{weatherData && (
